@@ -6,6 +6,8 @@ import java.util.ArrayList;
 
 @Service
 public class CustomerService {
+    Customer customer;
+
     ArrayList<Customer> customers = new ArrayList<>();
 
     public String createCustomer(Customer customer){
@@ -13,7 +15,7 @@ public class CustomerService {
         return "Customer " + customer.getName() + " created";
     }
 
-    public String getCustomerById(){
-        return null;
+    public Customer getCustomerById(int customerid){
+        return customers.get(customerid-1);
     }
 }
