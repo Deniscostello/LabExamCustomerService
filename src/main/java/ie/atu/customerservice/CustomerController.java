@@ -12,6 +12,7 @@ public class CustomerController {
         this.customerService=customerService;
     }
 
+
     @PostMapping("/customer")
     @ResponseStatus(HttpStatus.CREATED)
     public String createCustomer(@RequestBody Customer customer){
@@ -21,6 +22,15 @@ public class CustomerController {
     @GetMapping("/getCustomer")
     public Customer getCustomerId(@RequestParam int customerId){
         return customerService.getCustomerById(customerId );
+    }
+
+    @PostMapping("/createOrder")
+    public String orderDetails(Customer customer){
+        if(customer.getAge()>18){
+            return "Order add";
+        }else {
+           return  "You are too young to place an order";
+        }
     }
 
 }
