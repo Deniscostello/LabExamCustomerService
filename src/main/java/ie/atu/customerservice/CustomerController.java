@@ -16,8 +16,8 @@ public class CustomerController {
 
     @PostMapping("/customer")
     @ResponseStatus(HttpStatus.CREATED)
-    public Customer createCustomer(@RequestBody Customer customer){
-        return customer;
+    public String createCustomer(@RequestBody Customer customer){
+        return  customerService.createCustomer(customer);
 
     }
 
