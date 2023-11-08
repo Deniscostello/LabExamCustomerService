@@ -19,9 +19,8 @@ public class CustomerController {
     }
 
     @GetMapping("/getCustomer")
-    public String getCustomerId(@RequestParam int customerId){
-        customerService.getCustomerById(customerId );
-        return "Customer Id: " + customerId;
+    public Customer getCustomerId(@RequestParam int customerId){
+        return customerService.getCustomerById(customerId );
     }
 
 }
